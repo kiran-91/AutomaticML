@@ -15,8 +15,11 @@ file_upload = st.file_uploader("Upload a CSV file", type=["csv"])
 if file_upload is not None:
     try:
         df = pd.read_csv(file_upload)
-        st.write("### Data Preview", df.head())
-        st.session_state["df"] = df
+        if df.empty:
+            st.error("The uploaded file is empty.")
+        else:
+            st.write("### Data Preview", df.head())
+            st.session_state["df"] = df
     except Exception as e:
         st.error(f"Error reading file: {e}")
     
