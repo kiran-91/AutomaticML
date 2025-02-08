@@ -44,7 +44,7 @@ if df is not None:
             pred_holdout = reg_predict(best_model)
         elif problem_type == "Classification":
             st.write("### Running Classification Model Training")
-            s = clf_setup(data=df, target=target, session_id=123, verbose=False)
+            s = clf_setup(data=df, target=target, session_id=1234, verbose=False)
             best_model = clf_compare()
             st.write("### Best Model:", best_model)
             metrics = clf_pull()
