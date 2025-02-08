@@ -11,16 +11,15 @@ file_upload = st.file_uploader("Upload a CSV file", type=["csv"])
 if file_upload is not None:
     try:
         df = pd.read_csv(file_upload)
-        if df.empty:
-            st.error("Uploaded file is empty. Please upload a valid CSV file.")
-            
         st.write("### Data Preview", df.head())
+        st.session_state["df"] = df
     except Exception as e:
         st.error(f"Error reading file: {e}")
     
 else:
     st.warning("Please upload a CSV file to proceed.")
 
+df=st.session_state["df"]
 # Select Problem Type
 problem_type = st.selectbox("Choose problem type", ["Regression", "Classification"])
 
