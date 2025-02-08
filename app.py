@@ -4,6 +4,10 @@ from pycaret.regression import setup as reg_setup, compare_models as reg_compare
 from pycaret.classification import setup as clf_setup, compare_models as clf_compare, predict_model as clf_predict, pull as clf_pull
 
 st.title("AutoML App using PyCaret")
+# Initialize session state for df if not already set
+if "df" not in st.session_state:
+    st.session_state["df"] = None
+
 
 # File Upload
 file_upload = st.file_uploader("Upload a CSV file", type=["csv"])
