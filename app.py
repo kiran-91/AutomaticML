@@ -24,9 +24,9 @@ else:
 # Select Problem Type
 problem_type = st.selectbox("Choose problem type", ["Regression", "Classification"])
 
-# Ensure at least one column exists
-if df.shape[1] == 0:
-    st.error("The uploaded file has no valid columns. Please check the file and try again.")
+# # Ensure at least one column exists
+# if df.shape[1] == 0:
+#     st.error("The uploaded file has no valid columns. Please check the file and try again.")
 
 target = st.selectbox("Select target column", df.columns)
 
