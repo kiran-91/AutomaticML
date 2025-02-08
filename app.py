@@ -35,7 +35,7 @@ target = st.selectbox("Select target column", df.columns)
 try:
     if problem_type == "Regression":
         st.write("### Running Regression Model Training")
-        s = reg_setup(data=df, target=target, session_id=123, silent=True)
+        s = reg_setup(data=df, target=target, session_id=123)
         best_model = reg_compare()
         st.write("### Best Model:", best_model)
         metrics = reg_compare()
@@ -45,7 +45,7 @@ try:
         
     elif problem_type == "Classification":
         st.write("### Running Classification Model Training")
-        s = clf_setup(data=df, target=target, session_id=123, silent=True)
+        s = clf_setup(data=df, target=target, session_id=123)
         best_model = clf_compare()
         st.write("### Best Model:", best_model)
         metrics = reg_compare()
