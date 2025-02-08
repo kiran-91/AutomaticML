@@ -37,6 +37,8 @@ To get started with this project, follow these simple steps:
    ```
 
 ## 🛠️ Usage
+> **⚠️ Note**: Please note that PyCaret requires significant computational resources, which may result in a delayed display of results.
+
 1. Launch the application using the command above.
 2. Upload your CSV file containing the dataset.
 3. Select the problem type (Regression or Classification).
